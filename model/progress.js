@@ -20,20 +20,96 @@ Progress.init(
     progress_50: {
       type: DataTypes.STRING,
       allowNull: true,
-      // allowNull defaults to true
     },
     progress_100: {
       type: DataTypes.STRING,
       allowNull: true,
-      // allowNull defaults to true
     },
     createdAt: {
       type: DataTypes.DATE,
-      // allowNull defaults to true
     },
     foto: {
       type: DataTypes.BLOB,
-      // allowNull defaults to true
+    },
+    TMA: {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+      defaultValue: 0,
+      comment: "Tinggi Muka Air (cm)",
+    },
+    debit: {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+      defaultValue: 0,
+      comment: "Debit (m3/dtk)",
+    },
+    luas_area_kegiatan: {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+      defaultValue: 0,
+      comment: "Luas Area Kegiatan (m2)",
+    },
+    panjang_saluran: {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+      defaultValue: 0,
+      comment: "Panjang Saluran (m')",
+    },
+    menutup_bocoran: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0,
+      comment: "Menutup Bocoran (bh)",
+    },
+    angkat_sedimen: {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+      defaultValue: 0,
+      comment: "Angkat Sedimen (m3)",
+    },
+    pembersihan_sampah: {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+      defaultValue: 0,
+      comment: "Pembersihan Sampah (kg)",
+    },
+    pelumasan_pintu_air: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0,
+      comment: "Pelumasan Pintu Air (bh)",
+    },
+    pengecatan_pintu_air: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0,
+      comment: "Pengecatan Pintu Air (bh)",
+    },
+    angkat_potong_pohon: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0,
+      comment: "Angkat/potong pohon (btrng)",
+    },
+    kecamatan: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      comment: "Kecamatan",
+    },
+    kota: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      comment: "Kota/Kabupaten",
+    },
+    provinsi: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      comment: "Provinsi",
+    },
+    kelurahan: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      comment: "Kelurahan",
     },
   },
   {
@@ -43,12 +119,10 @@ Progress.init(
         fields: ["id", "createdAt"],
       },
     ],
-    // Other model options go here
-    sequelize, // We need to pass the connection instance
+    sequelize,
     modelName: "Progress",
-    tableName: "Progress", // We need to choose the model name
+    tableName: "Progress",
   }
 );
 
 module.exports = Progress;
-// the defined model is the class itself
